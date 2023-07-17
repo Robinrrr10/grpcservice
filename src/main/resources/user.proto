@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option java_package = "com.github" ;
+
+service user {
+    rpc login(AccountRequest) returns (LoginLogoutResponse);
+    rpc logout(Empty) returns (LoginLogoutResponse);
+}
+
+message AccountRequest {
+    string name = 1 ;
+    string password = 2 ;
+}
+
+message LoginLogoutResponse {
+    int32 status = 1;
+    string message = 2;
+}
+
+message Empty {
+
+}
